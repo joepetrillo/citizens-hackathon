@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { cn } from '@/lib/utils'
-import { ExternalLink } from '@/components/external-link'
 
 export function FooterText({ className, ...props }: React.ComponentProps<'p'>) {
   return (
@@ -12,12 +11,12 @@ export function FooterText({ className, ...props }: React.ComponentProps<'p'>) {
       )}
       {...props}
     >
-      Open source AI chatbot built with{' '}
-      <ExternalLink href="https://nextjs.org">Next.js</ExternalLink> and{' '}
-      <ExternalLink href="https://vercel.com/storage/kv">
-        Vercel KV
-      </ExternalLink>
-      .
+      This website was developed exclusively for a hackathon project as a proof
+      of concept and is in{' '}
+      <span className="font-bold">
+        no way associated with any established banking corporation
+      </span>
+      . Starter code was provided by a Vercel template.
     </p>
   )
 }

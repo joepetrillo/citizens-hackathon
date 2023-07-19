@@ -5,13 +5,12 @@ import { IconArrowRight } from '@/components/ui/icons'
 
 const exampleMessages = [
   {
-    heading: 'What is Citizens Bank?',
-    message: `You are Cleo, a super friendly personal assistant for Citizens Bank. You are helping a customer who wants to know more about Citizens Bank and what it is. \n`
+    heading: 'What is Muppets Bank?',
+    message: `What is Muppets Bank? `
   },
   {
-    heading: 'Do you offer mortgages?',
-    message:
-      'You are Cleo, a super friendly personal assistant for Citizens Bank. You are helping a customer who wants to know more about Citizens Bank mortgages and your offerings. \n'
+    heading: 'Does Muppets Bank offer mortgages?',
+    message: 'Does Muppets Bank offer mortgages? '
   }
 ]
 
@@ -19,9 +18,9 @@ export function EmptyScreen({ setInput }: Pick<UseChatHelpers, 'setInput'>) {
   return (
     <div className="mx-auto max-w-2xl px-4">
       <div className="rounded-lg border bg-background p-8">
-        <h1 className="mb-2 text-lg font-semibold">Hi, I&apos;m Cleo! 👋</h1>
+        <h1 className="mb-2 text-lg font-semibold">Hi, I&apos;m Kermit! 👋</h1>
         <p className="mb-2 leading-normal text-muted-foreground">
-          I can answer any questions you may have about Citizens Bank. Ask away!
+          I can answer any questions you may have about Muppets Bank. Ask away!
         </p>
         <p className="leading-normal text-muted-foreground">
           You can enter your own questions at the bottom of this page, or try

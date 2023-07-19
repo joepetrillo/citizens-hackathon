@@ -1,5 +1,6 @@
 import NextAuth, { type DefaultSession } from 'next-auth'
 import GitHub from 'next-auth/providers/github'
+import { NextResponse } from 'next/server'
 
 declare module 'next-auth' {
   interface Session {
@@ -24,8 +25,12 @@ export const {
       }
       return token
     },
-    authorized({ auth }) {
-      return !!auth?.user // this ensures there is a logged in user for -every- request
+    authorized({ request, auth }) {
+      if (!!!auth?.user) {
+        const signInUrl = new URL('/sign-in', request.url)
+        return NextResponse.redirect(signInUrl)
+      }
+      return true // this ensures there is a logged in user for -every- request
     }
   },
   pages: {
