@@ -1,7 +1,6 @@
-import { UseChatHelpers } from 'ai/react'
-
 import { Button } from '@/components/ui/button'
 import { IconArrowRight } from '@/components/ui/icons'
+import { Dispatch, SetStateAction } from 'react'
 
 const exampleMessages = [
   {
@@ -14,7 +13,11 @@ const exampleMessages = [
   }
 ]
 
-export function EmptyScreen({ setInput }: Pick<UseChatHelpers, 'setInput'>) {
+export function EmptyScreen({
+  setInput
+}: {
+  setInput: Dispatch<SetStateAction<string>>
+}) {
   return (
     <div className="mx-auto max-w-2xl px-4">
       <div className="rounded-lg border bg-background p-8">

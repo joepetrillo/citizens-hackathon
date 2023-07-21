@@ -10,10 +10,12 @@ import {
 } from '@/components/ui/tooltip'
 import { IconArrowElbow } from '@/components/ui/icons'
 import NewChat from './new-chat'
+import { LexMessage } from '@/lib/types'
 
 export interface PromptProps
   extends Pick<UseChatHelpers, 'input' | 'setInput'> {
   onSubmit: (value: string) => Promise<void>
+  setMessages: React.Dispatch<React.SetStateAction<LexMessage[]>>
   isLoading: boolean
 }
 
@@ -21,6 +23,7 @@ export function PromptForm({
   onSubmit,
   input,
   setInput,
+  setMessages,
   isLoading
 }: PromptProps) {
   const { formRef, onKeyDown } = useEnterSubmit()
@@ -36,7 +39,7 @@ export function PromptForm({
     <form
       onSubmit={async e => {
         e.preventDefault()
-        if (!input?.trim()) {
+        if (!input?.trim() || isLoading) {
           return
         }
         setInput('')
@@ -45,7 +48,7 @@ export function PromptForm({
       ref={formRef}
     >
       <div className="relative flex max-h-60 w-full grow flex-col overflow-hidden bg-background px-8 sm:rounded-md sm:border sm:px-12">
-        <NewChat />
+        <NewChat setInput={setInput} setMessages={setMessages} />
         <Textarea
           ref={inputRef}
           tabIndex={0}
