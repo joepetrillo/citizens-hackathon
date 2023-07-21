@@ -8,7 +8,7 @@ import {
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button'
-import { IconPlus } from './ui/icons'
+import { IconPlus, IconRefresh } from './ui/icons'
 import { useRouter } from 'next/navigation'
 import { LexMessage } from '@/lib/types'
 
@@ -36,7 +36,7 @@ export default function NewChat({
             'absolute left-0 top-4 h-8 w-8 rounded-full bg-background p-0 sm:left-4'
           )}
         >
-          <IconPlus />
+          <IconRefresh />
           <span className="sr-only">New Chat</span>
         </Link>
       </TooltipTrigger>
