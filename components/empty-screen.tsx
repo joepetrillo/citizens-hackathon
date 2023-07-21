@@ -10,6 +10,10 @@ const exampleMessages = [
   {
     heading: 'Does Muppets Bank offer mortgages?',
     message: 'Does Muppets Bank offer mortgages? '
+  },
+  {
+    heading: 'What credit cards do you offer?',
+    message: 'What credit cards do you offer? '
   }
 ]
 

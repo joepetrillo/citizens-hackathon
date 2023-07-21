@@ -16,15 +16,9 @@ export async function POST(req: Request) {
   }
 
   // lex bot logic here
-  // const res = await axios.post('http://3.89.35.206:8080/bot/chat', json)
+  const res = await axios.post('http://3.89.35.206:8080/bot/chat', json)
 
-  // return NextResponse.json(res.data);
-
-  return NextResponse.json({
-    sessionId,
-    role: 'bot',
-    content: `You said: ${content} -- Your role is: ${role} -- Your user id is: ${userId} -- Your session id is: ${sessionId}`
-  })
+  return NextResponse.json(res.data)
 }
 
 // return NextResponse.json({

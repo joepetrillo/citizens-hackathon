@@ -18,7 +18,7 @@ export function Chat({ sessionId }: { sessionId: string }) {
     setIsLoading(true)
     setMessages(messages => [...messages, message])
     const res = await axios.post('/api/chat', message)
-    setMessages(messages => [...messages, res.data])
+    setMessages(messages => [...messages, ...res.data])
     setIsLoading(false)
   }
 
